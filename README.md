@@ -27,7 +27,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 ##App Stores ##
+
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+
 
 sudo apt-get update && sudo apt-get upgrade -y
 
