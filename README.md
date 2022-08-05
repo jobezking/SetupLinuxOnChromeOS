@@ -1,9 +1,14 @@
 # Create GCP Project
 export PROJECT_ID="my-new-project"
+
 gcloud projects create $PROJECT_ID
+
 gcloud config set project $PROJECT_ID
+
 gcloud config set compute region us-central1
+
 gcloud config set compute/zone us-central1-f
+
 gcloud config set compute zone us-central1-f
 
 # SetupLinuxOnChromeOS
