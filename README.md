@@ -5,11 +5,12 @@ gcloud projects create $PROJECT_ID
 
 gcloud config set project $PROJECT_ID
 
-gcloud config set compute region us-central1
+gcloud services enable compute.googleapis.com
+
+gcloud config set compute/region us-central1
 
 gcloud config set compute/zone us-central1-f
 
-gcloud config set compute zone us-central1-f
 
 # SetupLinuxOnChromeOS
 Configure App Store, Docker, KVM, VSCode, Java, Android Studio And Google Cloud Platform on Crostini Linux
