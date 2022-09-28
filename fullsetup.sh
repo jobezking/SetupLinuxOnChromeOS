@@ -50,7 +50,7 @@ sudo apt install vim terraform code -y
 ### Android Studio
 
 sudo apt update && sudo apt install default-jdk -y
-flatpak install flathub com.google.AndroidStudio -y
+sudo flatpak install flathub com.google.AndroidStudio -y
 
 ## Google Cloud SDK
 
