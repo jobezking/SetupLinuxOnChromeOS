@@ -18,103 +18,63 @@ Configure App Store, Docker, KVM, VSCode, Java, Android Studio And Google Cloud 
 Linux ChromeOS Setup
 
 ## KVM ##
+sudo apt-get install software-properties-common -y
 sudo apt-get update && sudo apt-get upgrade -y 
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
 ## Docker ##
-sudo apt install -y ca-certificates curl gnupg lsb-release
+sudo apt-get update -y
+sudo apt-get install ca-certificates curl gnupg lsb-release -y
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+sudo docker run hello-world
+sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update && sudo apt install docker-ce docker-ce-cli containerd.io -y
-
-sudo usermod -aG docker $USER && newgrp docker
-
-docker version && sudo systemctl status docker 
-
-docker run hello-world
-
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
-
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install git gh -y
-
-## App Stores ##
-
+##App Stores ##
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
-
-
 sudo apt-get update && sudo apt-get upgrade -y
-
 sudo apt install flatpak -y
-
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 sudo apt-get install gnome-software gnome-packagekit -y
-
 sudo apt install libsquashfuse0 squashfuse fuse -y
-
 sudo apt install snapd -y
-
 #Close terminal and reopen terminal 
-
 sudo snap install snap-store
-
 sudo apt install plasma-discover -y
-
 sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get upgrade -y
 
+## Google Cloud Platform SDK Python3 Java VSCode Android Studio Terraform ##
 
-##Github Python3 VSCode Android Studio Terraform ##
-
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-
-sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-
-sudo apt update && sudo apt install gh -y
-
-sudo apt install git python3 python3-pip python3-virtualenv python3-dev build-essential -y
-
-sudo apt install libssl-dev libffi-dev wget ssh net-tools python3-venv -y
-
-sudo apt install software-properties-common default-jdk -y
-
+sudo apt install git python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev wget ssh net-tools python3-venv software-properties-common default-jdk -y
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 #https://code.visualstudio.com/docs/setup/linux
 
 sudo apt-get install wget gpg -y
-
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings
-
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
-
 sudo apt install apt-transport-https -y
-
 sudo apt update
-
 sudo apt install vim terraform code -y
+
+type -p curl >/dev/null || sudo apt install curl -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
 
 ### Android Studio
 
 sudo apt update && sudo apt install default-jdk -y
-sudo add-apt-repository ppa:maarten-fonville/android-studio
-sudo apt update && sudo apt install android-studio -y
+sudo flatpak install flathub com.google.AndroidStudio -y
 
 ## Google Cloud SDK
 
@@ -140,11 +100,3 @@ google-cloud-sdk-pubsub-emulator  \
 kubectl -y
 
 gcloud init
-
-
-
-
-
-
-
-
