@@ -14,7 +14,7 @@ gcloud config set compute/zone us-central1-f
 
 # SetupLinuxOnChromeOS
 
-Run https://github.com/jobezking/SetupLinuxOnChromeOS/blob/main/fullsetup.sh
+Run https://raw.githubusercontent.com/jobezking/SetupLinuxOnChromeOS/main/fullsetup.sh
 
 Configure App Store, Docker, KVM, VSCode, Java, Android Studio And Google Cloud Platform on Crostini Linux
 
