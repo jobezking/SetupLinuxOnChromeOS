@@ -30,6 +30,12 @@ sudo snap install snap-store
 sudo apt install plasma-discover -y
 sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get upgrade -y
 
+### Install browsers ##
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/chrome.list
+sudo apt-get update
+sudo apt-get install google-chrome-stable firefox-esr -y
+
 ## Google Cloud Platform SDK Python3 Java VSCode Android Studio Terraform ##
 
 sudo apt install git python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev wget ssh net-tools python3-venv software-properties-common default-jdk -y
