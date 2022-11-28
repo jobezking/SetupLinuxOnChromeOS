@@ -60,10 +60,16 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 
-### Android Studio
+### Android Studio IntelliJ Idea Pycharm
 
 sudo apt update && sudo apt install default-jdk -y
 sudo flatpak install flathub com.google.AndroidStudio -y
+sudo flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
+sudo flatpak install flathub com.jetbrains.PyCharm-Community -y
+
+## Utilities
+sudo flatpak install flathub org.filezillaproject.Filezilla -y
+flatpak install flathub org.gnome.TextEditor -y
 
 ## Google Cloud SDK
 
