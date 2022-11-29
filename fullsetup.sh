@@ -69,7 +69,7 @@ sudo flatpak install flathub com.jetbrains.PyCharm-Community -y
 
 ## Utilities
 sudo flatpak install flathub org.filezillaproject.Filezilla -y
-flatpak install flathub org.gnome.TextEditor -y
+sudo flatpak install flathub org.gnome.TextEditor -y
 
 ## Google Cloud SDK
 
