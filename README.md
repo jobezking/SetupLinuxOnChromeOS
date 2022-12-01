@@ -1,1 +1,1 @@
-# Edit and run fullsetup.sh from an account with sudo privileges.
+# Edit and run fullsetup.sh.
