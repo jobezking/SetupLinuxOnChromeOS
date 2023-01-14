@@ -6,7 +6,6 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
 ## Docker ##
-sudo apt-get update -y
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
