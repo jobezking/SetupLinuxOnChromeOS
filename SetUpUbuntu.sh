@@ -35,3 +35,6 @@ StartupWMClass=jetbrains-android-studio
 Name[en_GB]=android-studio.desktop
 
 sudo snap install pycharm-educational --classic
+sudo apt-get remove –purge 'thunderbird*' 'libreoffice*'
+sudo apt-get autoremove
+sudo apt-get clean
