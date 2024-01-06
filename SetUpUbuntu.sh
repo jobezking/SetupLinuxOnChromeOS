@@ -1,6 +1,6 @@
-sudo apt-get update && sudo apt-get upgrade -y 
+sudo apt update 
 
-sudo apt-get install -y software-properties-common qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager install ca-certificates curl gnupg lsb-release \
+sudo apt install -y software-properties-common qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager install ca-certificates curl gnupg lsb-release \
 wget nano vim gnome-console gnome-text-editor git gh python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev wget ssh net-tools python3-venv software-properties-common \
 gpg apt-transport-https vlc filezilla openjdk-18-jdk
 
@@ -11,4 +11,5 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 rm -f packages.microsoft.gpg
 sudo apt update
 sudo apt install vim code ./google-chrome-stable* -y
-sudo apt update
+rm -f google-chrome-stable*
+sudo apt update && sudo aptupgrade -y && sudo apt dist-upgrade -y
