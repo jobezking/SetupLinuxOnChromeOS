@@ -15,8 +15,8 @@ rm -f google-chrome-stable*
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 
 wget https://dl.google.com/dl/android/studio/ide-zips/2022.2.1.20/android-studio-2022.2.1.20-linux.tar.gz
-tar -zxvf android-studio-2022.1.1.21-linux.tar.gz
-rm -f android-studio-2022.1.1.21-linux.tar.gz
+tar -zxvf android-studio-2022.2.1.20-linux.tar.gz
+rm -f android-studio-2022.2.1.20-linux.tar.gz
 sudo mv android-studio /opt/
 sudo ln -sf /opt/android-studio/bin/studio.sh /bin/android-studio
 
