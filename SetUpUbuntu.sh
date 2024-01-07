@@ -1,6 +1,6 @@
 sudo apt update 
 
-sudo apt install -y software-properties-common qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager install ca-certificates curl gnupg lsb-release \
+sudo apt install -y software-properties-common qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager ca-certificates curl gnupg lsb-release \
 wget nano vim gnome-console gnome-text-editor git gh python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev wget ssh net-tools python3-venv software-properties-common \
 gpg apt-transport-https vlc filezilla python3-distutils openjdk-18-jdk
 
