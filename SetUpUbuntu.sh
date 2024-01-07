@@ -1,5 +1,5 @@
 sudo apt update 
-sudo apt-get remove –purge 'thunderbird*' 'libreoffice*'
+sudo apt-get remove --purge 'thunderbird*' 'libreoffice*'
 sudo apt-get autoremove
 sudo apt-get clean
 sudo apt update
