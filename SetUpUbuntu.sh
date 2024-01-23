@@ -2,6 +2,7 @@ sudo snap remove firefox
 sudo apt-get remove --purge 'thunderbird*' 'libreoffice*'
 sudo apt-get autoremove
 sudo apt-get clean
+#https://askubuntu.com/questions/1399383/how-to-install-firefox-as-a-traditional-deb-package-without-snap-in-ubuntu-22
 sudo install -d -m 0755 /etc/apt/keyrings
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 #The fingerprint should be 35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3
