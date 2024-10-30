@@ -37,6 +37,7 @@ sudo apt-get install google-chrome-stable firefox-esr -y
 
 ## Google Cloud Platform SDK Python3 Java VSCode Android Studio Terraform ##
 
+sudo add-apt-repository multiverse && sudo apt update && sudo apt install ubuntu-restricted-extras -y
 sudo apt install git python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev wget ssh net-tools python3-venv software-properties-common default-jdk -y
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
