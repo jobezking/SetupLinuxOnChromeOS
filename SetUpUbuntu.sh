@@ -29,6 +29,8 @@ wget nano vim gnome-console gnome-text-editor git gh python3 python3-pip python3
 gpg apt-transport-https vlc filezilla python3-distutils openjdk-18-jdk code ./google-chrome-stable*
 
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
+#for VMware 
+echo "sudo echo /etc/fstab >> vmhgfs-fuse /mnt/hgfs  fuse defaults,allow_other   0   0" | sudo tee -a /etc/fstab
 
 tar -zxvf android-studio-2022.2.1.20-linux.tar.gz
 sudo mv android-studio /opt/
