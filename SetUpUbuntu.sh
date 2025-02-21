@@ -24,9 +24,12 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 rm -f packages.microsoft.gpg
 sudo apt update
 
-sudo apt install -y software-properties-common qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager ca-certificates gnupg lsb-release \
-wget nano vim gnome-console gnome-text-editor git gh python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev net-tools python3-venv software-properties-common \
-gpg apt-transport-https vlc filezilla python3-distutils openjdk-18-jdk code ./google-chrome-stable*
+# for KVM
+sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager
+# for development
+sudo apt install -y software-properties-common  ca-certificates gnupg lsb-release code git gh \
+wget nano vim gnome-console gnome-text-editor python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev net-tools python3-venv software-properties-common \
+gpg apt-transport-https vlc filezilla python3-distutils openjdk-18-jdk ./google-chrome-stable*
 
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 #for VMware 
