@@ -17,7 +17,7 @@ sudo apt-get update && sudo apt-get install firefox
 sudo snap install pycharm-community --classic
 sudo apt install wget curl ssh -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-wget https://dl.google.com/dl/android/studio/ide-zips/2022.2.1.20/android-studio-2022.2.1.20-linux.tar.gz
+sudo add-apt-repository ppa:deadsnakes/ppa
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
