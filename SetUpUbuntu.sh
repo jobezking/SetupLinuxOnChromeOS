@@ -1,3 +1,4 @@
+sudo apt install wget curl ssh -y
 sudo snap remove firefox
 sudo apt-get remove --purge 'thunderbird*' 'libreoffice*'
 sudo apt-get autoremove
@@ -15,10 +16,9 @@ Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla
 sudo apt-get update && sudo apt-get install firefox
 sudo snap install pycharm-community --classic
-sudo apt install wget curl ssh -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo add-apt-repository ppa:deadsnakes/ppa
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo add-apt-repository ppa:deadsnakes/ppa  #Python repo
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg  #Microsoft Visual Studio code repo
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
