@@ -24,32 +24,9 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 rm -f packages.microsoft.gpg
 sudo apt update
 
-# for KVM
-sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager
 # for development
 sudo apt install -y software-properties-common  ca-certificates gnupg lsb-release code git gh \
 wget nano vim gnome-console gnome-text-editor python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev net-tools python3-venv software-properties-common \
-gpg apt-transport-https vlc filezilla python3-distutils openjdk-18-jdk ./google-chrome-stable*
+gpg apt-transport-https vlc filezilla openjdk-21-jdk ./google-chrome-stable*
 
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
-#for VMware 
-echo "sudo echo /etc/fstab >> vmhgfs-fuse /mnt/hgfs  fuse defaults,allow_other   0   0" | sudo tee -a /etc/fstab
-
-tar -zxvf android-studio-2022.2.1.20-linux.tar.gz
-sudo mv android-studio /opt/
-sudo ln -sf /opt/android-studio/bin/studio.sh /bin/android-studio
-rm -f android-studio-2*
-
-sudo vim /usr/share/applications/android-studio.desktop
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Android Studio
-Comment=Android Studio
-Exec=bash -i "/opt/android-studio/bin/studio.sh" %f
-Icon=/opt/android-studio/bin/studio.png
-Categories=Development;IDE;
-Terminal=false
-StartupNotify=true
-StartupWMClass=jetbrains-android-studio
-Name[en_GB]=android-studio.desktop
