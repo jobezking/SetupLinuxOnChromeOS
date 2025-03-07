@@ -1,3 +1,9 @@
+sudo apt install flatpak -y
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo shutdown -r now
+sudo flatpak install flathub com.github.dail8859.NotepadNext
+
 sudo apt install wget curl ssh -y
 sudo snap remove firefox
 sudo apt-get remove --purge 'thunderbird*' 'libreoffice*'
@@ -28,5 +34,8 @@ sudo apt update
 sudo apt install -y software-properties-common  ca-certificates gnupg lsb-release code git gh \
 wget nano vim gnome-console gnome-text-editor python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev net-tools python3-venv software-properties-common \
 gpg apt-transport-https vlc filezilla openjdk-21-jdk ./google-chrome-stable*
+
+wget https://github.com/spyder-ide/spyder/releases/latest/download/Spyder-Linux-x86_64.sh && sudo sh Spyder-Linux-x86_64.sh
+
 
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
