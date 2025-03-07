@@ -35,7 +35,8 @@ sudo apt install -y software-properties-common  ca-certificates gnupg lsb-releas
 wget nano vim gnome-console gnome-text-editor python3 python3-pip python3-virtualenv python3-dev build-essential libssl-dev libffi-dev net-tools python3-venv software-properties-common \
 gpg apt-transport-https vlc filezilla openjdk-21-jdk ./google-chrome-stable*
 
+# To install Spyder ( spyder-ide.org ) for Python development. Install in /opt/spyder-6 directory.
+# To run: spyder (may require reboot to work from command line). To uninstall: sudo /opt/spyder-6/uninstall-spyder.sh 
 wget https://github.com/spyder-ide/spyder/releases/latest/download/Spyder-Linux-x86_64.sh && sudo sh Spyder-Linux-x86_64.sh
 
-
-sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
+sudo apt update && sudo apt upgrade -y --allow-downgrades && sudo apt dist-upgrade -y && sudo apt autoremove -y
